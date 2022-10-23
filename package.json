@@ -1,0 +1,29 @@
+{
+  "name": "express-webhook",
+  "version": "1.0.0",
+  "description": "a simple webhook developed using express",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon ./index.js",
+    "start": "NODE_ENV=production node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasJoaquinParisi/express-webhook.git"
+  },
+  "author": "Nicolás Joaquín Parisi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolasJoaquinParisi/express-webhook/issues"
+  },
+  "homepage": "https://github.com/NicolasJoaquinParisi/express-webhook#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "winston": "^3.8.2"
+  }
+}
