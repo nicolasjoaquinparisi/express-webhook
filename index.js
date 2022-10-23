@@ -15,7 +15,6 @@ app.use(morgan('dev'));
 
 const PORT = process.env.PORT || 3000;
 const TARGET = process.env.TARGET;
-const METHOD = process.env.METHOD;
 const ORIGIN = process.env.USE_REQUEST_ORIGIN;
 const SEND_DATA = process.env.SEND_DATA;
 
@@ -26,11 +25,9 @@ app.get('/hook/healthcheck', (req, res) => {
 app.post('/hook', async (req, res) => {
   if (!TARGET)
     return res.status(501).send({ msg: 'There is no target url setted' });
-  if (!METHOD)
-    return res.status(501).send({ msg: 'There is no http method setted' });
 
   const requestObject = {
-    method: METHOD,
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
