@@ -22,7 +22,7 @@ app.get('/hook/healthcheck', (req, res) => {
 
 app.post('/hook', async (req, res) => {
   if (!TARGET)
-    return res.status('400').send({ msg: 'There is not target url setted' });
+    return res.status(501).send({ msg: 'There is not target url setted' });
 
   const payload = { ...req.body };
 
