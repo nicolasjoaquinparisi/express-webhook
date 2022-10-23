@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  webhook:
+    container_name: webhook
+    env_file: .env
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+      args:
+        - PORT=${PORT}
+    volumes:
+      - ./:/srv/app
+    restart: unless-stopped
+    command: npm run dev
+    ports:
+      - "${PORT}:${PORT}"
